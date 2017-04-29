@@ -31,3 +31,7 @@ a:active {
 .xyz {
     color: red
 }
+
+#veggieheading {
+    font-weight: bold;
+}
