@@ -4,3 +4,32 @@
     border: 1px solid #666;
     padding: 2px;
 }
+
+ul#navlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    float: left;
+    width: 100%;
+    color: purple;
+    background-color: red;
+}
+
+ul#navlist li {
+    display: inline;
+    text-decoration: none;
+}
+
+ul#navlist li a {
+    float: left;
+    width: 5em;
+    padding: 0.2em 1em;
+    color: orange;
+    background-color: green;
+    border-right: 10px solid white;
+}
+
+ul#navlist li a:hover {
+    background-color: #369;
+    color: #fff;
+}
