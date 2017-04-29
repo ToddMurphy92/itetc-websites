@@ -1,5 +1,8 @@
 div {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 20px 5px 5px 10px;
+    border: solid;
+    padding: 15px;
 }
 
 .importantNotes {
