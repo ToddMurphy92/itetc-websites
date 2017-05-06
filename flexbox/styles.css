@@ -103,3 +103,7 @@
 .signup {
   margin-left: auto;
 }
+
+.test {
+  flex: initial;
+}
