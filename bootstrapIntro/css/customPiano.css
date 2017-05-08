@@ -1,0 +1,7 @@
+.bannerImage {
+  background-image:url("../images/keys.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100px;
+  color: #fff;
+}
