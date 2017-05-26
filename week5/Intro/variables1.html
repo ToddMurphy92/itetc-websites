@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        
+    </head>
+    <body>
+      <h1>Variables example</h1>
+      Wecome to Javascript <span id="wecomeYou"></span> <!-- Move this after the /script and see what happens -->
+        
+      <p>Before the script...</p>
+
+      <script>
+        "use strict";
+        let firstName; // let is almost the same as var
+        let myName = "Todd"; // This could be written as var myName = "Todd";
+        firstName = prompt("What is your first name?");
+        alert ("Hello " + firstName + ". My name is " + myName);
+        document.getElementById("wecomeYou").innerHTML = firstName;
+        document.write("This time I will just write your name on the page where ever I am " + firstName);          
+      </script>
+      <p>Here is some more HTML content</p>
+      <hr>
+
+      <script>
+        document.write("Now I will write your name out on the webpage again " + firstName);
+        // see if you can make these two bits of tet on separate lines of the webpage ie seperate them somehow
+        document.write("<br/>" + "Did you know my name is " + myName);
+      </script>
+
+      <p>... after the script.</p>
+
+
+    </body>
+</html>
