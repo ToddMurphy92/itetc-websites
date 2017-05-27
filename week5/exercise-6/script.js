@@ -21,29 +21,26 @@ function setNewsSize(x)
   {
     var element = document.getElementById("newsbreak");
         
-    element.style.fontSize = "0px";
+    element.style.visibility = "hidden";
   }
   else if (x === 'appear')
   {
     var element = document.getElementById("newsbreak");
     
-    element.style.fontSize = "20px";
+    element.style.visibility = "visible";
   }
   else if (x === 'reverseVisability')
   {
     var element = document.getElementById("newsbreak");
-    var currentSize = window.getComputedStyle(element, null).getPropertyValue("font-size");
-    var newSize = (parseFloat(currentSize) + -1);
+    var currentVisibility = window.getComputedStyle(element, null).getPropertyValue("visibility");
 
-    if ((parseFloat(currentSize) === 0))
+    if (currentVisibility === "hidden")
     {
-      var newSize = 20;
+      element.style.visibility = "visible";
     }
     else
     {
-      var newSize = 0;
+      element.style.visibility = "hidden";
     }
-
-    element.style.fontSize = newSize + "px";
   }
 }
