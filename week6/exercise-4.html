@@ -1,0 +1,28 @@
+<!-- 
+Exercise 4:
+Create a webpage to ask the user what year Taylor Swift was born. Inform them if they got the
+answer right or wrong. In you answer, inform the user if they need to choose a later year or an
+earlier year.
+  -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Week 6 - Exercise 4</title>
+  </head>
+  <body>
+    <script>
+      var answer = parseInt(window.prompt("Input Tay Tay's birth year", "0"));
+
+      while (answer != 1989) {
+        if (answer > 1989) {
+          answer = parseInt(window.prompt("WRONG - Too high - Try again - Input Tay Tay's birth year", "0"));
+        }
+        else {
+          answer = parseInt(window.prompt("WRONG - Too low - Try again - Input Tay Tay's birth year", "0"));
+        }
+      }
+
+      document.write("You did it! - 1989 is correct!!!");
+    </script>  
+  </body>
+</html>
