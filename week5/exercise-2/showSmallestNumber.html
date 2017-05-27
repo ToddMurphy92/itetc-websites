@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Write a JS program that accepts two ints and displays the largest</title>
+    </head>
+    <body>
+      <h1>Show larger number</h1>
+
+      <script>
+        let num1, num2, num3;
+        num1 = window.prompt("Input num1", "0");
+        num2 = window.prompt("Input num2", "0");
+        num3 = window.prompt("Input num3", "0");
+
+        if (num1 == num2)
+        {
+          document.write(num1 + " is equal to " + num2);
+        }
+        else
+        {
+          document.write("The smallest of " + num1 + " and " + num2 + " is " + Math.min(num1, num2) + ".");
+        }        
+
+        document.write("<br/>" + "Smallest of all 3: " + Math.min(num1, num2, num3));
+
+      </script>
+
+    </body>
+</html>
