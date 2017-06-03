@@ -1,0 +1,8 @@
+#myList {
+  cursor: default;
+  font-size: 26px;
+}
+
+#myList button {
+  margin-left: 2em;
+}
