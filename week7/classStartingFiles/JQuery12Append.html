@@ -3,7 +3,14 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-
+        $(document).ready(function () {
+            $("#btn1").click(function () { 
+                $("p").append(" <b>Appended text</b>. ");
+            });
+            $("#btn2").click(function () { 
+                $("ol").append("<li>Append item</li>");                
+            });
+        });
     </script>
     </head>
 <body>
