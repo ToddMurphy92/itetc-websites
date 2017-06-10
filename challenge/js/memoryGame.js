@@ -41,7 +41,7 @@ var memes = [
 // This will reference a position in the memes array.
 // Each position will be used twice by a for loop
 // to assign an image to a card.
-var cardMatches [
+/*var cardMatches [
   0,1,2,3,4,5
 ];
 
@@ -50,7 +50,7 @@ var cardMatches [
 // This will get shuffled.
 var cardOrder [
   0,1,2,3,4,5,6,7,8,9,10,11
-];
+];*/
 
 //  Total number of attempts at matching pictures
 //  Is displayed at the end of each game
@@ -66,7 +66,7 @@ $(document).ready(function (memoryGame) {
   // Sets class 'back' on for all cards
   hideAll();
 
-  // Event handling - Click Card
+  // Event handling - Click - Toggles class 'back'
   $('.card').bind('click', function (){
     $(this).toggleClass('back');
   });
@@ -90,7 +90,9 @@ function createGrid() {
   // Phone - Portrait:   12 x 1
   var output="";
   for (i = 0; i < 12; i++) {
-    output += ("<div class='col-xs-12 col-sm-6 col-md-4 card'>" + i + "</div>");
+    output += ("<div class='col-xs-12 col-sm-6 col-md-4 card'>");
+    output += ("<img src='./images/Chrome.png' class=cardImage height=10");
+    output += ("</div>");
     document.getElementById("memoryGame").innerHTML=output;
   }
 }
