@@ -14,21 +14,48 @@ var imgArray = [
 ];
 */
 
-// Array of boxes
-var box [
-  "box1",
-  "box2",
-  "box3",
-  "box4",
-  "box5",
-  "box6",
-  "box7",
-  "box8",
-  "box9",
-  "box10",
-  "box11",
-  "box12"
-];
+// Initial Setup
+$(document).ready(function (memoryGame) {
+
+  
+  // Create Grid
+  createGrid();
+  // Add back of card image
+
+  // Shuffle card faces
+  
+  // Add front faces in hidden state
+
+  // Fade - Test
+  var testImg = './images/slide2.jpg';
+  fadeTest(".test", "./images/slide2.jpg");
+  
+});
+
+// Create Grid
+function createGrid() {
+  // Desktop:            4 x 3
+  // Phone - Landscape:  2 x 6
+  // Phone - Portrait:   12 x 1
+  var output="";
+  for (i = 0; i < 12; i++) {
+    output += ("<div class='col-xs-12 col-sm-6 col-md-4 card'>" + i + "</div>");
+    document.getElementById("memoryGame").innerHTML=output;
+  }
+}
+
+
+// Change image of card to file
+function fadeTest(card, file) {
+
+  $(card).fadeOut(1000, function () {
+    $(this).attr('src', file).fadeIn(1000);
+  });
+  
+}
+
+// Change image
+
 
 // Play Again
 

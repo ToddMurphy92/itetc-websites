@@ -1,8 +1,4 @@
-* {
-    
-}
-
-.bannerImage {
+.blah {
   background-image:url("../images/keys.jpg");
   background-position: center center;
   background-size: cover;
@@ -10,21 +6,7 @@
   color: #fff;  
 }
 
-.container {
-  background-color: orange;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 20px;
-}
-
-.container-fluid {
-  background-color: lightgrey;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 20px;
-}
-
-.box {
+.card {
   background-color: peachpuff;  
   padding: 30px;
   margin: 15px;

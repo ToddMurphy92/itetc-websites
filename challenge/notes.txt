@@ -1,0 +1,4 @@
+Useful jquery stuff:
+- hasClass
+- addClass
+- removeClass
