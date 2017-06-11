@@ -104,7 +104,7 @@ var lastCardIndex = 42; // Intentionally invalid card number
 var thisCardIndex = 43; // Intentionally invalid card number
 $('.cardImg').click (function () {
 
-  alert("Last card index: " + lastCardIndex);
+  //alert("Last card index: " + lastCardIndex);
   thisCardIndex = ($(this).parent().index() );  
 
   
@@ -112,17 +112,20 @@ $('.cardImg').click (function () {
   // by clicking a flipped card.
   if ($(this).hasClass('back')) {
     clicks++;
-  }
 
+    // Flip the card
+    $(this).attr('src', memes[cardNumbers[thisCardIndex]]);
+  }
   
 
   // TO-DO: Compare the two cards
   if (clicks % 2 === 0) {
-    alert("Second Click");
+    //alert("Second Click");
 
     $(this).removeClass('back');
     $(this).addClass('front');
 
+    // If a match is found
     if (cardNumbers[lastCardIndex] === cardNumbers[thisCardIndex]) {
       alert("Match found!");
 
@@ -131,27 +134,33 @@ $('.cardImg').click (function () {
       // Set this card to found
       // Repeat for the last card
       $(this).removeClass('notMatched');
-      $(this).addClass('matched');
+      $(this).addClass('matched');      
 
       $("#firstClick").removeClass('notMatched');
       $("#firstClick").addClass('matched');
+      
+      found++; // Win the game when found = 6
+    } 
 
-      found++;
-    }
-
-   
 
     // TO-DO: End game if found = 6
     if (found === 6) {
       alert("You win!!!");
     }
 
-    $('#firstClick').removeAttr('id');
+    $('#firstClick').removeAttr('id');    
 
     lastCardIndex = 44; // Intentionally invalid card number
   }
   else {
     lastCardIndex = thisCardIndex;
+    
+    // Reset state of preivous cards if not found
+    $('.notMatched').attr('src', './memes/doge.png');
+    // Reset state of preivous firtClick card
+    $('#firstClick').removeAttr('id');
+
+    // Set new firstClick card
     $(this).attr('id', 'firstClick');
 
     $(".notMatched").removeClass('front');
@@ -161,7 +170,7 @@ $('.cardImg').click (function () {
     $(this).addClass('front');
   }
 
-  alert( "Index:" + thisCardIndex );
+  //alert( "Index:" + thisCardIndex );
   
 })
 
