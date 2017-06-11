@@ -6,21 +6,11 @@
   color: #fff;  
 }
 
-.card {
-  background-color: lightgrey;  
-  padding: 5px;
-  margin: 5px;
-  border-radius: 20px;
-  text-align: center;
-  height: 150px;
-  width: 150px;
-}
-
-.cardImage {
-  height: 150px;
-  width: 150px;
-}
-
-#memorygame {
+.cardDiv {
   
 }
+
+.cardImg {
+    
+}
+

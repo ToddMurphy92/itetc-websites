@@ -38,69 +38,95 @@ var memes = [
   './memes/sad_obama.png',
 ];
 
+
+
+
 // This will reference a position in the memes array.
 // Each position will be used twice by a for loop
 // to assign an image to a card.
-/*var cardMatches [
+var cardMatches = [
   0,1,2,3,4,5
 ];
+
+
+
 
 // Represents the order we will go through each #memorygame child
 // in assigning cardMatches.
 // This will get shuffled.
-var cardOrder [
+var cardOrder = [
   0,1,2,3,4,5,6,7,8,9,10,11
-];*/
+];
+
+
+
 
 //  Total number of attempts at matching pictures
 //  Is displayed at the end of each game
 var attempts = 0;
 
-// Initial Setup
+
+
+
+// --- Initial Setup ---
 $(document).ready(function (memoryGame) {
 
   
   // Create Grid
-  createGrid();
+  //createGrid();
+
 
   // Sets class 'back' on for all cards
   hideAll();
 
+
   // Event handling - Click - Toggles class 'back'
-  $('.card').bind('click', function (){
+  $('#memorygame').children.bind('click', function (){
     $(this).toggleClass('back');
   });
 
+
   // Add back of card image
 
+
   // Shuffle card faces
+
   
   // Add front faces in hidden state
-
-  // Fade - Test
-  var testImg = './memes/datboi.gif';
-  fadeTest(".test", testImg);
+    
   
 });
 
-// Create Grid
+
+
+
+// Create Grid - Currently unused
 function createGrid() {
   // Desktop:            4 x 3
   // Phone - Landscape:  2 x 6
   // Phone - Portrait:   12 x 1
-  var output="";
+  var output="<div class='row'>";
   for (i = 0; i < 12; i++) {
-    output += ("<div class='col-xs-12 col-sm-6 col-md-4 card'>");
-    output += ("<img src='./images/Chrome.png' class=cardImage height=10");
+    output += ("<div class='col-xs-12 col-sm-6 col-md-4 cardDiv'>");
+    output += ("<img src='./images/Chrome.png' class='cardImg'>");
     output += ("</div>");
+    if (i == 11) {
+      output += ("</div>");
+    }
     document.getElementById("memoryGame").innerHTML=output;
   }
 }
+
+
+
 
 // Give back class to all children of id=memorygame
 function hideAll() {
   $('#memoryGame').children().addClass('back');
 }
+
+
+
 
 // Change image of card to file
 function fadeTest(card, file) {
@@ -111,7 +137,11 @@ function fadeTest(card, file) {
   
 }
 
-// Change image
+
+
+
+// Flip Card
+
 
 
 // Play Again
