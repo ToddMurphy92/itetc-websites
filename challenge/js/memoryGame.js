@@ -38,98 +38,57 @@ var memes = [
   './memes/sad_obama.png',
 ];
 
-
-
-
-// This will reference a position in the memes array.
-// Each position will be used twice by a for loop
-// to assign an image to a card.
-var cardMatches = [
-  0,1,2,3,4,5
-];
-
-
-
-
-// Represents the order we will go through each #memorygame child
-// in assigning cardMatches.
+// Represents the image assigned to each card
 // This will get shuffled.
-var cardOrder = [
-  0,1,2,3,4,5,6,7,8,9,10,11
+// 
+// Example - Before Shuffle:
+// The 1st and 7th card will have the image at memes[0] (aliensguy.jpg)
+var cardNumbers = [
+  0,1,2,3,4,5,0,1,2,3,4,5
 ];
 
 
 
 
-//  Total number of attempts at matching pictures
+//  Total number of clicks
 //  Is displayed at the end of each game
-var attempts = 0;
+var clicks = 0;
+
+// Number of matches found
+var found = 0;
 
 
 
 
 // --- Initial Setup ---
 $(document).ready(function (memoryGame) {
-
   
-  // Create Grid
-  //createGrid();
-
-
   // Sets class 'back' on for all cards
   hideAll();
 
-
-  // Event handling - Click - Toggles class 'back'
-  $('#memorygame').children.bind('click', function (){
-    $(this).toggleClass('back');
-  });
-
-
-  // Add back of card image
-
-
   // Shuffle card faces
-
-  
-  // Add front faces in hidden state
+  // shuffle();
     
-  
 });
 
 
 
-
-// Create Grid - Currently unused
-function createGrid() {
-  // Desktop:            4 x 3
-  // Phone - Landscape:  2 x 6
-  // Phone - Portrait:   12 x 1
-  var output="<div class='row'>";
-  for (i = 0; i < 12; i++) {
-    output += ("<div class='col-xs-12 col-sm-6 col-md-4 cardDiv'>");
-    output += ("<img src='./images/Chrome.png' class='cardImg'>");
-    output += ("</div>");
-    if (i == 11) {
-      output += ("</div>");
-    }
-    document.getElementById("memoryGame").innerHTML=output;
-  }
-}
+// 
 
 
 
 
-// Give back class to all children of id=memorygame
+// Give back class to all children of .cardDiv
 function hideAll() {
-  $('#memoryGame').children().addClass('back');
+  $('.cardDiv').children().addClass('back');
+  $('.cardDiv').children().addClass('notMatched');
 }
 
 
 
 
 // Change image of card to file
-function fadeTest(card, file) {
+function imageSwap(card, file) {
 
   $(card).fadeOut(1000, function () {
     $(this).attr('src', file).fadeIn(1000);
@@ -141,17 +100,82 @@ function fadeTest(card, file) {
 
 
 // Flip Card
+var lastCardIndex = 42; // Intentionally invalid card number
+var thisCardIndex = 43; // Intentionally invalid card number
+$('.cardImg').click (function () {
+
+  alert("Last card index: " + lastCardIndex);
+  thisCardIndex = ($(this).parent().index() );  
+
+  
+  // Prevent users from messing up the click count
+  // by clicking a flipped card.
+  if ($(this).hasClass('back')) {
+    clicks++;
+  }
+
+  
+
+  // TO-DO: Compare the two cards
+  if (clicks % 2 === 0) {
+    alert("Second Click");
+
+    $(this).removeClass('back');
+    $(this).addClass('front');
+
+    if (cardNumbers[lastCardIndex] === cardNumbers[thisCardIndex]) {
+      alert("Match found!");
+
+      // TO-DO:
+      // Remove class cardImg
+      // Set this card to found
+      // Repeat for the last card
+      $(this).removeClass('notMatched');
+      $(this).addClass('matched');
+
+      $("#firstClick").removeClass('notMatched');
+      $("#firstClick").addClass('matched');
+
+      found++;
+    }
+
+   
+
+    // TO-DO: End game if found = 6
+    if (found === 6) {
+      alert("You win!!!");
+    }
+
+    $('#firstClick').removeAttr('id');
+
+    lastCardIndex = 44; // Intentionally invalid card number
+  }
+  else {
+    lastCardIndex = thisCardIndex;
+    $(this).attr('id', 'firstClick');
+
+    $(".notMatched").removeClass('front');
+    $(".notMatched").addClass('back');
+
+    $(this).removeClass('back');
+    $(this).addClass('front');
+  }
+
+  alert( "Index:" + thisCardIndex );
+  
+})
 
 
 
-// Play Again
 
-// Restart
+// TO-DO: Play Again
 
-// Function - Shuffle
+// TO-DO: Restart
 
-// Optional Feature - Game Timer
+// TO-DO: Function - Shuffle
 
-// Optional Feature - Turn Timer
+// TO-DO: Optional Feature - Game Timer
 
-// Optional Feature - Local Two Player
+// TO-DO: Optional Feature - Turn Timer
+
+// TO-DO: Optional Feature - Local Two Player

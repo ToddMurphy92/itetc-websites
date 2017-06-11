@@ -3,3 +3,22 @@ Useful jquery stuff:
 - addClass
 - removeClass
 - toggleClass
+
+
+
+// Create Grid - Currently unused
+function createGrid() {
+  // Desktop:            4 x 3
+  // Phone - Landscape:  2 x 6
+  // Phone - Portrait:   12 x 1
+  var output="<div class='row'>";
+  for (i = 0; i < 12; i++) {
+    output += ("<div class='col-xs-12 col-sm-6 col-md-4 cardDiv'>");
+    output += ("<img src='./images/Chrome.png' class='cardImg'>");
+    output += ("</div>");
+    if (i == 11) {
+      output += ("</div>");
+    }
+    document.getElementById("memoryGame").innerHTML=output;
+  }
+}
