@@ -67,7 +67,10 @@ $(document).ready(function (memoryGame) {
   hideAll();
 
   // Shuffle card faces
-  // shuffle();
+  shuffle(cardNumbers);
+
+  // Shuffle image array
+  shuffle(memes);
     
 });
 
@@ -189,6 +192,18 @@ $('.cardImg').click (function () {
 // TO-DO: Restart
 
 // TO-DO: Function - Shuffle
+function shuffle (array) {
+  var i = 0
+    , j = 0
+    , temp = null
+
+  for (i = array.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+}
 
 // TO-DO: Optional Feature - Game Timer
 
