@@ -107,19 +107,23 @@ $('.cardImg').click (function () {
   //alert("Last card index: " + lastCardIndex);
   thisCardIndex = ($(this).parent().index() );  
 
+ 
   
-  // Prevent users from messing up the click count
+  // Prevent users from messing up the click count or flipped state
   // by clicking a flipped card.
   if ($(this).hasClass('back')) {
     clicks++;
 
     // Flip the card
-    $(this).attr('src', memes[cardNumbers[thisCardIndex]]);
+    //$(this).attr('src', memes[cardNumbers[thisCardIndex]]);
   }
   
 
   // TO-DO: Compare the two cards
   if (clicks % 2 === 0) {
+    // Chagne the image
+    $(this).attr('src', memes[cardNumbers[thisCardIndex]]);  
+
     //alert("Second Click");
 
     $(this).removeClass('back');
@@ -140,7 +144,7 @@ $('.cardImg').click (function () {
       $("#firstClick").addClass('matched');
       
       found++; // Win the game when found = 6
-    } 
+    }
 
 
     // TO-DO: End game if found = 6
@@ -168,6 +172,9 @@ $('.cardImg').click (function () {
 
     $(this).removeClass('back');
     $(this).addClass('front');
+
+    // Chagne the image
+    $(this).attr('src', memes[cardNumbers[thisCardIndex]]);  
   }
 
   //alert( "Index:" + thisCardIndex );
