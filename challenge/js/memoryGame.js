@@ -2,7 +2,7 @@
 // Array of images to be used on the front of the cards
 // This will get shuffled
 var memes = [
-  './memes/aliensguy.jpg',
+  //'./memes/aliensguy.jpg',
   './memes/cheers.png',
   './memes/grumpycat.png',
   './memes/nyancat_big.gif',
@@ -10,33 +10,35 @@ var memes = [
   './memes/all_the_things.jpg',
   './memes/datboi.gif',
   './memes/happy_obama.png',
-  './memes/one_does_not_simply.png',
+  //'./memes/one_does_not_simply.png',
   './memes/surprised_obama.png',
   './memes/aw_yeah.gif',
-  './memes/doge.png',
+  //'./memes/doge.png',
   './memes/harold.jpg',
   './memes/pikachu_dancing.gif',
-  './memes/terminal.png',
+  //'./memes/terminal.png',
   './memes/badger.gif',
   './memes/feels.png',
   './memes/hypnotoad.gif',
   './memes/rick.png',
   './memes/trogdor.png',
   './memes/billnye.gif',
-  './memes/fridayfriday.png',
+  //'./memes/fridayfriday.png',
   './memes/james_comey.png',
   './memes/rickastely.png',
   './memes/trump_china.png',
-  './memes/blazeit420.png',
+  //'./memes/blazeit420.png',
   './memes/fsociety.png',
   './memes/morty.png',
   './memes/ron_swanson.png',
-  './memes/xzibit.png',
+  //'./memes/xzibit.png',
   './memes/bmo.gif',
   './memes/gaben.png',
   './memes/nicmoji_smile.gif',
-  './memes/sad_obama.png',
+  //'./memes/sad_obama.png',
 ];
+
+var backImage = './memes/terminal.png'
 
 // Represents the image assigned to each card
 // This will get shuffled.
@@ -163,7 +165,7 @@ $('.cardImg').click (function () {
     lastCardIndex = thisCardIndex;
     
     // Reset state of preivous cards if not found
-    $('.notMatched').attr('src', './memes/doge.png');
+    $('.notMatched').attr('src', backImage);
     // Reset state of preivous firtClick card
     $('#firstClick').removeAttr('id');
 
