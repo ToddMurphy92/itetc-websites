@@ -7,24 +7,25 @@
 }
 
 .cardDiv {
-  background-color: yellow;
+  background-color: white;
   align-self: left;
-  margin-top: 20px;  
+  margin-top: 0.5em;  
 }
 
 .cardImg {
-  background-color: blue;
-  height:150px;
-  width: 150px;
+  background-color: white;
+  height:6em;
+  width: 6em;
+  padding: 0;
 }
 
 .back {
-  background-color: pink;
+  background-color: white;
 }
 
 #memoryGame {
-  background-color: green;
+  background-color: white;
   align-content: left;
-  width: 700px;
-  margin-left: 20px;
+  width: 24em;
+  margin-left: 0em;
 }
