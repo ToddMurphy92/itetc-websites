@@ -1,9 +1,22 @@
+TO-DO: (X = Completed)
+- Scaling for mobiles in Landscape mode (6 columns 2 rows ie col-???-2)
+X Reset button working
+- More appropriate image sizing for desktop devices
+X Display total # of attempts at the end of each game
+X Dispaly total # of unsuccessful attempts at the end of each game
+- Give option to play again
+- (Bonus) Something nicer than alerts
+- (Bonus) Alert 'match found' after showing the match
+- (Bonus) Flip animation
+- (Bonus) Pull memes from reddit using json
+
+######
+
 Useful jquery stuff:
 - hasClass
 - addClass
 - removeClass
 - toggleClass
-
 
 
 // Create Grid - Currently unused

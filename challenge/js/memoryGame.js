@@ -52,33 +52,23 @@ var cardNumbers = [
 
 
 
-//  Total number of clicks
-//  Is displayed at the end of each game
-var clicks = 0;
 
-// Number of matches found
-var found = 0;
 
+var clicks = 0; //  Total number of clicks; Is displayed at the end of each game
+var found = 0; // Number of matches found
+var clicksUnsuccessful = 0; // Total number of unsuccessful clicks
+var clicksHighScore = 0; // Best score this session (lest clicks)
+var clicksUnsuccessfulHighScore = 0; // Best score this session (least unsuccessful clicks)
+var finished = false; // If the current game has been finished yet
 
 
 
 // --- Initial Setup ---
 $(document).ready(function (memoryGame) {
   
-  // Sets class 'back' on for all cards
-  hideAll();
-
-  // Shuffle card faces
-  shuffle(cardNumbers);
-
-  // Shuffle image array
-  shuffle(memes);
+  restartGame();
     
 });
-
-
-
-// 
 
 
 
@@ -87,6 +77,7 @@ $(document).ready(function (memoryGame) {
 function hideAll() {
   $('.cardDiv').children().addClass('back');
   $('.cardDiv').children().addClass('notMatched');
+  $('.notMatched').attr('src', backImage);
 }
 
 
@@ -150,11 +141,15 @@ $('.cardImg').click (function () {
       
       found++; // Win the game when found = 6
     }
+    else {
+      clicksUnsuccessful++;
+    }
 
 
     // TO-DO: End game if found = 6
     if (found === 6) {
-      alert("You win!!!");
+      alert("You win!!! Total Clicks: " + clicks + " Unsuccessful clicks: " + clicksUnsuccessful);
+      finished = true;
     }
 
     $('#firstClick').removeAttr('id');    
@@ -189,11 +184,72 @@ $('.cardImg').click (function () {
 
 
 
-// TO-DO: Play Again
+// TO-DO: Play Again - Code written but not implemented yet as button
+// Probably could do with some more smarts like tracking best score
+function playAgain() {
+  
+  // Set top score values (if necessary)
+  if (clicks < clicksHighScore) {
+    clicksHighScore = clicks;
+  }
 
-// TO-DO: Restart
+  if (clicksUnsuccessful < clicksUnsuccessfulHighScore) {
+    clicksUnsuccessfulHighScore = clicksUnsuccessful;
+  } // Finished setting top score values
 
-// TO-DO: Function - Shuffle
+  restartGame(); // Reset cards and some game values
+  
+}
+
+
+
+// Play Again button event trigger
+$('.btn-playAgain').click(function () { 
+  
+  if (finished === true) {
+    playAgain();
+  }
+  else {
+    alert("Stop trying to find bugs and just play the game!");
+  }  
+  
+});
+
+
+
+// Restart
+function restartGame() {
+
+  // Reset and shuffle cards
+  hideAll();
+  shuffle(cardNumbers);
+  shuffle(memes);
+
+  // Counter reset
+  clicks = 0;
+  found = 0;
+
+}
+
+
+
+
+// Restart button event trigger
+$('.btn-restart').click(function () {   
+
+  if (finished === fales) {
+    restartGame();
+  }
+  else {    
+    playAgain();
+  }
+  
+});
+
+
+
+
+// Shuffle
 function shuffle (array) {
   var i = 0
     , j = 0
@@ -207,7 +263,20 @@ function shuffle (array) {
   }
 }
 
+
+
+
 // TO-DO: Optional Feature - Game Timer
+/*
+function timerStart(currentTime) {
+  
+}
+
+function timerEnd(currentTime) {
+  
+}
+*/
+
 
 // TO-DO: Optional Feature - Turn Timer
 
