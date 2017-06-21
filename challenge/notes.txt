@@ -4,7 +4,8 @@ X Reset button working
 - More appropriate image sizing for desktop devices
 X Display total # of attempts at the end of each game
 X Dispaly total # of unsuccessful attempts at the end of each game
-- Give option to play again
+X Give option to play again
+- (Bonus) Actually display the high scores (which I record but do nothing with right now)
 - (Bonus) Something nicer than alerts
 - (Bonus) Alert 'match found' after showing the match
 - (Bonus) Flip animation
