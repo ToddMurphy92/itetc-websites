@@ -127,8 +127,6 @@ $('.cardImg').click (function () {
 
     // If a match is found
     if (cardNumbers[lastCardIndex] === cardNumbers[thisCardIndex]) {
-      alert("Match found!");
-
       // TO-DO:
       // Remove class cardImg
       // Set this card to found
@@ -140,6 +138,9 @@ $('.cardImg').click (function () {
       $("#firstClick").addClass('matched');
       
       found++; // Win the game when found = 6
+
+      setTimeout(function() { alert("Match found"); }, 500);
+      
     }
     else {
       clicksUnsuccessful++;
@@ -237,7 +238,7 @@ function restartGame() {
 // Restart button event trigger
 $('.btn-restart').click(function () {   
 
-  if (finished === fales) {
+  if (finished === false) {
     restartGame();
   }
   else {    
