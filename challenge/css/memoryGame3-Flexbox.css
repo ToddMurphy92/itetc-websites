@@ -1,9 +1,6 @@
-.blah {
-  background-image:url("../images/keys.jpg");
-  background-position: center center;
-  background-size: cover;
-  height: 100px;
-  color: #fff;  
+.cardBox {
+  display: flex;
+  width: 1em;
 }
 
 .cardDiv {

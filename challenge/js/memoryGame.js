@@ -127,10 +127,7 @@ $('.cardImg').click (function () {
 
     // If a match is found
     if (cardNumbers[lastCardIndex] === cardNumbers[thisCardIndex]) {
-      // TO-DO:
-      // Remove class cardImg
-      // Set this card to found
-      // Repeat for the last card
+          
       $(this).removeClass('notMatched');
       $(this).addClass('matched');      
 
